@@ -1,11 +1,11 @@
 # Programmation_culte
-# 🏛️ Ministère Maison de Lumière — Application de Gestion
+#  Ministère Maison de Lumière — Application de Gestion
 
 Application web complète pour la gestion des programmes de cultes, des membres et l'exportation PDF du Ministère Maison de Lumière.
 
 ---
 
-## 📋 Table des matières
+##  Table des matières
 
 -   [Aperçu](#aper%C3%A7u)
 -   [Fonctionnalités](#fonctionnalit%C3%A9s)
@@ -19,7 +19,7 @@ Application web complète pour la gestion des programmes de cultes, des membres 
 
 ---
 
-## 🌟 Aperçu
+##  Aperçu
 
 Application single-page (fichier HTML unique) permettant à l'équipe du ministère de :
 
@@ -31,7 +31,7 @@ Application single-page (fichier HTML unique) permettant à l'équipe du minist�
 
 ---
 
-## ✅ Fonctionnalités
+##  Fonctionnalités
 
 ### Tableau de bord
 
@@ -81,7 +81,7 @@ Application single-page (fichier HTML unique) permettant à l'équipe du minist�
 
 ---
 
-## 🚀 Installation et configuration
+##  Installation et configuration
 
 ### Prérequis
 
@@ -117,7 +117,7 @@ start maison-de-lumiere-supabase.html
 
 ---
 
-## 🗄️ Configuration Supabase
+##  Configuration Supabase
 
 ### 1\. Créer un projet Supabase
 
@@ -185,7 +185,7 @@ maison-de-lumiere/
 
 ---
 
-## 📖 Utilisation
+##  Utilisation
 
 ### Créer un programme
 
@@ -210,7 +210,7 @@ maison-de-lumiere/
 
 ---
 
-## 📄 Export PDF
+##  Export PDF
 
 Trois modes d'export disponibles :
 
@@ -223,7 +223,7 @@ Trois modes d'export disponibles :
 
 ---
 
-## 💾 Sauvegarde des données
+##  Sauvegarde des données
 
 | Action | Description |
 | --- | --- |
@@ -242,6 +242,6 @@ Développé pour le **Ministère Maison de Lumière**.
 
 ---
 
-## 📝 Licence
+##  Licence
 
 Ce projet est à usage interne du Ministère Maison de Lumière.
