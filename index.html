@@ -336,6 +336,7 @@ h1,h2,h3{font-family:var(--disp);line-height:1.2}
         <div class="fg"><label class="flbl">Chant spécial</label><input type="text" class="finp" id="iCha" placeholder="ex. FR Joshua Juden Forestal Joachim"></div>
         <div class="fg"><label class="flbl">Présentation des visiteurs</label><input type="text" class="finp" id="iVis" placeholder="Responsable accueil visiteurs"></div>
         <div class="fg"><label class="flbl">Orateur <span class="req">*</span></label><input type="text" class="finp" id="iOra" placeholder="ex. Pasteur Josué Joachim" required></div>
+        <div class="fg"><label class="flbl">Prière finale</label><input type="text" class="finp" id="iPrf" placeholder="Responsable de la prière finale"></div>
       </div>
       <div class="f-section">Texte biblique &amp; Thème</div>
       <div class="fgrid">
@@ -746,6 +747,7 @@ function makeCard(p, withDelete) {
   if (p.pri) rows += row('Intercesseur/se', p.pri);
   if (p.cha) rows += row('Chant spécial', p.cha);
   if (p.vis) rows += row('Prés. des visiteurs', p.vis);
+  if (p.prf) rows += row('Prière finale', p.prf);
   rows += row('Texte biblique', '<strong>' + p.tex + '</strong>' + (p.them ? ' — ' + p.them : ''));
   rows += row('Orateur', '<strong>' + p.ora + '</strong>');
   if (p.notes) rows += row('Notes', p.notes);
@@ -879,6 +881,7 @@ function saveProg(e) {
     cha:   document.getElementById('iCha').value  || '',
     vis:   document.getElementById('iVis').value  || '',
     ora:   document.getElementById('iOra').value,
+    prf:   document.getElementById('iPrf').value  || '',
     tex:   document.getElementById('iTex').value,
     them:  document.getElementById('iThem').value || '',
     notes: document.getElementById('iNot').value  || ''
@@ -899,6 +902,7 @@ function cancelForm() {
   document.getElementById('iHF').value = '00:00';
   document.getElementById('iMod').value = '';
   document.getElementById('iLec').value = '';
+  document.getElementById('iPrf').value = '';
   document.getElementById('frmTitle').textContent = 'Nouveau Programme';
   document.getElementById('frmSubmit').textContent = 'Enregistrer le programme';
   goTo('programmes');
@@ -918,6 +922,7 @@ function editProg(id) {
   document.getElementById('iPri').value = p.pri || '';
   document.getElementById('iCha').value = p.cha || '';
   document.getElementById('iVis').value = p.vis || '';
+  document.getElementById('iPrf').value = p.prf || '';
   document.getElementById('iOra').value = p.ora;
   document.getElementById('iTex').value = p.tex;
   document.getElementById('iThem').value = p.them || '';
@@ -1279,6 +1284,7 @@ function pdfCulteBlock(doc, p, yStart, showType) {
     ['Moderateur/trice', p.mod],
     ['Lecteur/trice',    p.lec]
   ];
+  if (p.prf) fields.push(['Priere finale', p.prf]);
   if (p.pri) fields.push(['Intercesseur/se',     p.pri]);
   if (p.cha) fields.push(['Chant special',        p.cha]);
   if (p.vis) fields.push(['Pres. des visiteurs',  p.vis]);
