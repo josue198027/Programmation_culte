@@ -1004,6 +1004,7 @@ function previewProg(id) {
   if(p.vis) rows+='<tr><td style="color:var(--muted);padding:6px 10px 6px 0;white-space:nowrap">Visiteurs</td><td style="padding:6px 0">'+p.vis+'</td></tr>';
   rows+='<tr><td style="color:var(--muted);padding:6px 10px 6px 0;white-space:nowrap">Texte</td><td style="padding:6px 0"><strong>'+p.tex+'</strong>'+(p.them?' — <em>'+p.them+'</em>':'')+'</td></tr>';
   rows+='<tr><td style="color:var(--muted);padding:6px 10px 6px 0;white-space:nowrap">Orateur</td><td style="padding:6px 0"><strong>'+p.ora+'</strong></td></tr>';
+  if(p.prf) rows+='<tr><td style="color:var(--muted);padding:6px 10px 6px 0;white-space:nowrap">Prière finale</td><td style="padding:6px 0">'+p.prf+'</td></tr>';
   if(p.notes) rows+='<tr><td style="color:var(--muted);padding:6px 10px 6px 0;white-space:nowrap">Notes</td><td style="padding:6px 0">'+p.notes+'</td></tr>';
   var old=document.getElementById('previewOverlay'); if(old) old.remove();
   var ov=document.createElement('div');
@@ -1340,12 +1341,12 @@ function pdfCulteBlock(doc, p, yStart, showType) {
     ['Moderateur/trice', p.mod],
     ['Lecteur/trice',    p.lec]
   ];
-  if (p.prf) fields.push(['Priere finale', p.prf]);
   if (p.pri) fields.push(['Intercesseur/se',     p.pri]);
   if (p.cha) fields.push(['Chant special',        p.cha]);
   if (p.vis) fields.push(['Pres. des visiteurs',  p.vis]);
   fields.push(['Texte biblique', p.tex + (p.them ? '  -  ' + p.them : '')]);
   fields.push(['Orateur',        p.ora]);
+  if (p.prf) fields.push(['Priere finale', p.prf]);
   if (p.notes) fields.push(['Notes', p.notes]);
 
   for (var i = 0; i < fields.length; i++) {
@@ -1453,5 +1454,5 @@ loadData();
 
 </script>
 
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a09b58497cb0ac9a',t:'MTc4MTEyNTYzOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
